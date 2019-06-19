@@ -1,34 +1,44 @@
 body{ 
-background-image: url(trees.jpeg);
+background-image: url(galexy.jpeg);
 background-repeat: no-repeat;
 background-size: cover;
 }
-
-h2{
-  color: lightgreen;
+.greet{
+  display: flex;
+  justify-content: center;
+  pad: 0.5em;
+}
+h1{
+  color: black;
   display: flex;
   justify-content: center;
 }
 .name{
   display: flex;
   justify-content: center;
+  padding:0.5em
+  
 }
 
 
 .greet-button{
     display: flex;
-    justify-content: center;
-    /* cursor: pointer; */
+    justify-content: center; 
+    padding: 0.5em;
   }
-  .radio-inline{
+
+  .radioBtn{ 
     justify-content:center;
     display: flex;
+    padding: 5em
+
   }
+
   span{
     color: black;
-  font-size: 16px;
+  font-size: 15px;
   margin: 1em;
-  background-color: darkgray;
+
   }
 
   

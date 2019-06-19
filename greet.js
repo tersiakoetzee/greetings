@@ -1,22 +1,47 @@
-var greetBtn = document.querySelector(".greetBtn");
- 
+var greetBtnElem = document.querySelector("greetBtn");
 
-function greetingBtn(){
- 
-var greet = 0;
-btn.addEventListener('click', function(){
-    greet++;
 
-    localStorage['spotted' ];
-});
-var greetingBtn = 0;
+function GreetFactory(stored) {
 
-if (localStorage['spotted']){
+  var names = stored || {};
 
-    greet = Name(localStorage['spotted']);
-}   
+  function giveName(name) {
+
+    if (name) {
+      if (names[name] === undefined) {
+          names[name] = 0;
+       }
+     }
+     return name;
+  }
+
+  function greetingBtnElem(name, lang) {
+    var theName = giveName(name);
+    if (lang === "English") {
+      return "Hello, " + theName;
+
+    } else if (lang === "isiXhosa") {
+      return "Molo, " + theName;
+
+    } else if (lang === "Afrikaans") {
+      return "Hallo, " + theName;
+    }
+  }
+
+  function counter() {
+    return Object.keys(names).length;
+  }
+
+  function getName() {
+    return names;
+  }
+  return {
+    giveName,
+    greetingBtnElem,
+    counter,
+    getName,
+  }
 }
 
 
-
-greetBtn.addEventListener('click',);
+greetBtnElem.addEventListener('click',greetBtnElem);
