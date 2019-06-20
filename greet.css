@@ -23,7 +23,8 @@ h1{
 
 .greet-button{
     display: flex;
-    justify-content: center; 
+    justify-content: center;
+    font-size: 30px; 
     padding: 0.5em;
   }
 
@@ -36,7 +37,7 @@ h1{
 
   span{
     color: black;
-  font-size: 15px;
+  font-size: 25px;
   margin: 1em;
 
   }
