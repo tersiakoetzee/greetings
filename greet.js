@@ -44,4 +44,4 @@ function GreetFactory(stored) {
 }
 
 
-greetBtnElem.addEventListener('click',greetBtnElem);
+greetBtnElem.addEventListener('click',greetingBtnElem);
