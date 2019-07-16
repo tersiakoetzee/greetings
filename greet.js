@@ -1,47 +1,53 @@
-var greetBtnElem = document.querySelector("greetBtn");
+var greetBtnElem = document.querySelector(".clicked");
+var language = document.querySelectorAll(".language");
+var test = document.getElementById("#language")
+var textVal = document.querySelector("#textName");
+var greetingString = document.querySelector(".greetingDiv")
+var theLanguage = ""
+var greet = greetFactory();
+var namesGreeted = {};
+var greetcount = document.querySelector(".counter")
+localStorage['name'] = namesGreeted;
 
 
-function GreetFactory(stored) {
-
-  var names = stored || {};
-
-  function giveName(name) {
-
-    if (name) {
-      if (names[name] === undefined) {
-          names[name] = 0;
-       }
-     }
-     return name;
-  }
-
-  function greetingBtnElem(name, lang) {
-    var theName = giveName(name);
-    if (lang === "English") {
-      return "Hello, " + theName;
-
-    } else if (lang === "isiXhosa") {
-      return "Molo, " + theName;
-
-    } else if (lang === "Afrikaans") {
-      return "Hallo, " + theName;
+function greetMe() {
+    var checkedRadiobtn = document.querySelector("input[name='radiobut']:checked");
+    for (let i = 0; i < checkedRadiobtn.length; i++) {
+        var elem = checkedRadiobtn[i];
+        if (elem.checked) {
+            if (elem.value == "English") {
+                document.getElementById("lang").innerHTML = greet.theLanguage;
+                increment();
+            }
+        }
     }
-  }
+    if (checkedRadiobtn) {
+        theLanguage = checkedRadiobtn.value
+    }
 
-  function counter() {
-    return Object.keys(names).length;
-  }
 
-  function getName() {
-    return names;
-  }
-  return {
-    giveName,
-    greetingBtnElem,
-    counter,
-    getName,
-  }
+    greetingString.innerHTML = greet.getName(textVal.value)
+    increment()
 }
 
 
-greetBtnElem.addEventListener('click',greetingBtnElem);
+
+function increment() {
+    var textVal = document.querySelector("#textName").value;
+    greet.getName(textVal);
+
+
+    if (textVal === undefined || textVal === "") {
+        return false;
+    }
+    greet.setCounter();
+    greetcount.innerHTML = greet.getCounter();
+}
+
+// localStorage.getItem('Name');
+// namesCounted++;
+
+// localStorage['counted'] = namesCounted;
+
+
+greetBtnElem.addEventListener("click", greetMe)

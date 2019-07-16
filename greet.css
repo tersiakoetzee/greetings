@@ -6,42 +6,68 @@ background-size: cover;
 .greet{
   display: flex;
   justify-content: center;
-  pad: 0.5em;
+
 }
 h1{
   color: black;
   display: flex;
   justify-content: center;
 }
+
+h2{
+  justify-content: center;
+  display: flex;
+  color: black;
+}
+
 .name{
+justify-content: center;
+display: flex;
+} 
+.counter{
+  justify-content: left;
   display: flex;
-  justify-content: center;
-  padding:0.5em;
-  
+  color: black;
+
 }
 
-.greet-button{
-  display: flex;
-  justify-content: center;
-  font-size: 30px; 
-  padding: 0.5em;
+input{
+  width: 15em;
+  height: 2em;
+  margin-right: 2em;
 }
 
-  .radioBtn{ 
-    justify-content:center;
-    display: flex;
-    padding: 5em
 
-  }
-
+.radioBtn{ 
+ justify-content:center;
+ display: flex;
+ margin: auto;
+ margin-top: 5em;
+}
+ 
   span{
-    color: black;
-  font-size: 25px;
-  margin: 1em;
+  color: black;
+  font-size: 20px;
+
 
   }
-
-  .row{
-    display: flex;
-    justify-content: center;
+  
+  .clicked{
+    display: block;
+  max-width: 200px;
+  margin: auto;
+  margin-top: 5em;
+  font-size: 1em;
+  color: black;
   }
+
+
+.greetingDiv{
+  justify-content: center;
+  display: flex;
+  margin-top: 5em;
+  margin-right: 5em;
+margin-left: 4em;
+  color: black;
+  font-size: 20px;
+}

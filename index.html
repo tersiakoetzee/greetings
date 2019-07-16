@@ -8,6 +8,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="grid.css">
     <link rel="stylesheet" href="greet.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -24,43 +26,78 @@
     <div class="row">
         <div class=" col-12">
             <div class="name">
-                <input type="text" style="height:30px;width:250px" name="" value="">
+                <span>
+                    Name:
+                </span>
+                <span>
+                    <input class="fname" type="text" id="textName" name="name">
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="greetingDiv"></div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="counter"> 0
+
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="numberMessage">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="radioBtn">
+
+                    <label class="radio-inline">
+
+                        <span> <input type="radio" name="radiobut" value="English" class="language" id="language">
+                            English
+                        </span>
+                        <span><input type="radio" name="radiobut" value="Afrikaans" class="language">
+                            Afrikaans
+                        </span>
+
+                        <span> <input type="radio" name="radiobut" value="isiXhosa" class="language">
+                            isiXhosa
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <input type="button" name="greetBtn" class="clicked" value="Greet me">
+                <p id="lang"></p>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12">
-            <div class="radioBtn">
+    <script src="greetfactory.js" charset="utf-8"></script>
+    <script src="greet.js" charset="utf-8"></script>
 
-                <label class="radio-inline">
 
-                    <span> <input type="radio" value="" name="">
-                        English
-                    </span>
-                    <span><input type="radio" value="" name="">
-                        Afrikaans
-                    </span>
 
-                    <span> <input type="radio" value="" name="">
-                        isiXhosa
-                    </span>
+    <script>
+        $("#textName").keyup(function (e) {
+            var regex = /^[a-zA-Z]+$/;
+            (regex.test(this.value) !== true) ? this.value = this.value.replace(/[^a-zA-Z]+/, '') : this.value
+        });
+    </script>
 
-                </label>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="row">
-        <div class="col-12">
-            <button class="greet-button greetBtn" style="font-style: italic; width:150px;">Greet Me</button>
-        </div>
-    </div>
-    </div>
-
-    <script src="greet.js"></script>
 </body>
 
 </html>
