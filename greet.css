@@ -1,55 +1,42 @@
-body{ 
-background-image: url(galexy.jpeg);
-background-repeat: no-repeat;
-background-size: cover;
-}
-.greet{
-  display: flex;
+  body{ 
+  background-image: url(galexy.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  
+  h1{
+    color: black;
+    display: flex;
+    justify-content: center;
+  }
+
+  h2{
+    justify-content: center;
+    display: flex;
+    color: black;
+  }
+
+  .name{
   justify-content: center;
-
-}
-h1{
-  color: black;
   display: flex;
-  justify-content: center;
-}
+  } 
 
-h2{
-  justify-content: center;
+  input{
+    width: 15em;
+    height: 2em;
+    margin-right: 2em;
+  }
+
+  .radioBtn{ 
+  justify-content:center;
   display: flex;
-  color: black;
-}
-
-.name{
-justify-content: center;
-display: flex;
-} 
-.counter{
-  justify-content: left;
-  display: flex;
-  color: black;
-
-}
-
-input{
-  width: 15em;
-  height: 2em;
-  margin-right: 2em;
-}
-
-
-.radioBtn{ 
- justify-content:center;
- display: flex;
- margin: auto;
- margin-top: 5em;
-}
+  margin: auto;
+  margin-top: 5em;
+  }
  
   span{
   color: black;
-  font-size: 20px;
-
-
+  padding: 0.5em;
   }
   
   .clicked{
@@ -61,13 +48,14 @@ input{
   color: black;
   }
 
-
-.greetingDiv{
-  justify-content: center;
-  display: flex;
-  margin-top: 5em;
-  margin-right: 5em;
-margin-left: 4em;
+  .greetingDiv{
+  margin-left: 28em; 
   color: black;
   font-size: 20px;
-}
+  }
+
+  .counter{
+  margin-left: 20em;
+  color: black;
+  font-size: 20px;
+  }  
