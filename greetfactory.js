@@ -1,6 +1,6 @@
 function greetFactory(listOfNames) {
 
-  var namesGreeted = {} 
+  var namesGreeted = listOfNames || {} 
   
   var greetingsCounter = 0;  
 
@@ -19,6 +19,9 @@ function greetFactory(listOfNames) {
     if(upperCaseName.length < 1) {
       return "No Name Entered";
     }
+    if(theLanguage === undefined || theLanguage === ""){
+      return "No Language Selected";
+    }
     if (theLanguage === "English") {
       return theGreeting = "Hello, " + upperCaseName;
     }
@@ -29,8 +32,6 @@ function greetFactory(listOfNames) {
       return theGreeting = "Hallo, " + upperCaseName;
     }
   
-    
-
   }
 
   function englishLang() {
@@ -38,7 +39,6 @@ function greetFactory(listOfNames) {
   }
 
   function setCounter() {
-    console.log(greetingsCounter)
   return greetingsCounter;
   }
 
