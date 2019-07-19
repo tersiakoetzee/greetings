@@ -42,10 +42,6 @@ function greetFactory(listOfNames) {
   return greetingsCounter;
   }
 
-  function getCounter() {
-    return localStorage.length;
-
-  }
 
 
   return {
