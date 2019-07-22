@@ -5,31 +5,43 @@ var test = document.getElementById("#language");
 var textVal = document.querySelector("#textName");
 var greetingString = document.querySelector(".greetingDiv");
 var theLanguage = "";
-var greet = greetFactory();
 var namesGreeted = {};
 var greetcount = document.querySelector(".counter");
-greetcount.innerHTML = greet.getCounter();
+var greeted = JSON.parse(localStorage.getItem("Name"))
+var greet = greetFactory(greeted);
+// count()
 
 function greetMe() {
-   
-    localStorage.setItem(textVal.value, 1);
-    var checkedRadiobtn = document.querySelector("input[name='radiobut']:checked");
+
+ 
     
+    var checkedRadiobtn = document.querySelector("input[name='radiobut']:checked");
+
     if (checkedRadiobtn) {
         theLanguage = checkedRadiobtn.value;
     }
-
-console.log(textVal.value)
-    greetingString.innerHTML = greet.getName(textVal.value, theLanguage)
+    greet.name(textVal.value)
+    greet.getName(textVal.value, theLanguage);
+    greetingString.innerHTML = greet.output();
     greetcount.innerHTML = greet.setCounter();
 
+    localStorage.setItem("Name", JSON.stringify(greet.storedNames()));
+    // count()
 }
+// function count(){
+//     count.innerHTML = greet.count();
+// }
 
-function resetBtn(){
+function resetBtn() {
     localStorage.clear();
+    greet.clear();
     greetcount.innerHTML = "";
     greetingString.innerHTML = "";
+
 }
 
 clickResetElem.addEventListener("click", resetBtn)
 greetBtnElem.addEventListener("click", greetMe)
+window.onload = function(){
+    greetcount.innerHTML = greet.setCounter();
+}

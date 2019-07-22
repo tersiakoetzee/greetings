@@ -1,59 +1,63 @@
 function greetFactory(listOfNames) {
 
-  var namesGreeted = listOfNames || {} 
-  
-  var greetingsCounter = 0;  
+  var namesGreeted = listOfNames || {};
+  var theGreeting = "";
 
 
-  function name(textVal){
-    if(namesGreeted[textVal] === undefined){
-      greetingsCounter++
 
-      namesGreeted[textVal] = 0
+  function name(textVal) {
+    if (textVal) {
+      if (namesGreeted[textVal] === undefined) {
+        namesGreeted[textVal] = 0;
+      }
     }
   }
 
   function getName(textVal, theLanguage) {
-    name(textVal)
+
     var upperCaseName = textVal.charAt(0).toUpperCase() + textVal.slice(1);
-    if(upperCaseName.length < 1) {
-      return "No Name Entered";
-    }
-    if(theLanguage === undefined || theLanguage === ""){
-      return "No Language Selected";
-    }
-    if (theLanguage === "English") {
-      return theGreeting = "Hello, " + upperCaseName;
-    }
-    if (theLanguage === "isiXhosa") {
-      return theGreeting = "Molo, " + upperCaseName;
-    }
-    if (theLanguage === "Afrikaans") {
-      return theGreeting = "Hallo, " + upperCaseName;
-    }
-  
+    if (upperCaseName === "" && theLanguage === "") {
+      theGreeting = "Please Enter Name and Select Language";
+    } else if (upperCaseName === "") {
+      theGreeting = "No Name Entered";
+    } else if (theLanguage === "") {
+      theGreeting = "No Language Selected";
+    } else if (theLanguage === "English") {
+      theGreeting = "Hello, " + upperCaseName;
+    } else if (theLanguage === "isiXhosa") {
+      theGreeting = "Molo, " + upperCaseName;
+    } else if (theLanguage === "Afrikaans") {
+      theGreeting = "Hallo, " + upperCaseName;
+    };
   }
 
-  function englishLang() {
-    return "Hello," + namesGreeted;
+  function output() {
+    return theGreeting;
   }
 
   function setCounter() {
-  return greetingsCounter;
+    var list = Object.keys(namesGreeted);
+    return list.length;
   }
 
-  function getCounter() {
-    return localStorage.length;
-
+  function storedNames() {
+    return namesGreeted;
   }
+  function clear(){
+   namesGreeted = {};
+  }
+  
 
 
   return {
-    englishLang,
+    output,
     getName,
     setCounter,
-    getCounter
-
+    name,
+    storedNames,
+    clear
+    // count
   }
 }
+
 
