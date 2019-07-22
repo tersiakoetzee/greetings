@@ -48,7 +48,7 @@ function greetFactory(listOfNames) {
     englishLang,
     getName,
     setCounter,
-    getCounter
+//     getCounter
 
   }
 }
