@@ -46,7 +46,6 @@ function greetFactory(listOfNames) {
   function loadingName(){
    namesGreeted = {};
   }
-  
 
 
   return {

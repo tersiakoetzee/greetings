@@ -9,7 +9,6 @@ var namesGreeted = {};
 var greetcount = document.querySelector(".counter");
 var greeted = JSON.parse(localStorage.getItem("Name"))
 var greet = greetFactory(greeted);
-// count()
 
 function greetMe() {
 
