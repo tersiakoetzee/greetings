@@ -46,10 +46,10 @@ describe("The getName greetFactory", function () {
 
     })
 
-    it("if no language was selected return, No Language Selected", function () {
+    it("if a name was entered but no language selected return, No Language Selected", function () {
         let greeting = greetFactory();
 
-        greeting.getName("")
+        greeting.getName("Gill", "")
         assert.equal("No Language Selected", greeting.output())
 
 
@@ -62,9 +62,10 @@ describe("The setCounter function", function () {
 it ("only allow a name to be enterded once", function(){
     let greeting = greetFactory();
 
-    greeting.getName("Tersia")
-    greeting.setCounter("tersia")
-    assert.equal(0,greeting.storedNames())
+    greeting.name("Mia")
+    greeting.name("Mia")
+    greeting.name("Mia")
+    assert.equal(greeting.loadingName(1))
 
 })
 });
