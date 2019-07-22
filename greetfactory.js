@@ -43,7 +43,7 @@ function greetFactory(listOfNames) {
   function storedNames() {
     return namesGreeted;
   }
-  function clear(){
+  function loadingName(){
    namesGreeted = {};
   }
   
@@ -55,8 +55,7 @@ function greetFactory(listOfNames) {
     setCounter,
     name,
     storedNames,
-    clear
-    // count
+    loadingName
   }
 }
 

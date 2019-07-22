@@ -26,15 +26,13 @@ function greetMe() {
     greetcount.innerHTML = greet.setCounter();
 
     localStorage.setItem("Name", JSON.stringify(greet.storedNames()));
-    // count()
+    
 }
-// function count(){
-//     count.innerHTML = greet.count();
-// }
+
 
 function resetBtn() {
     localStorage.clear();
-    greet.clear();
+    greet.loadingName();
     greetcount.innerHTML = "";
     greetingString.innerHTML = "";
 
