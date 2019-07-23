@@ -3,7 +3,6 @@ function greetFactory(listOfNames) {
   var namesGreeted = listOfNames || {};
   var theGreeting = "";
 
-
   function getName(textVal, theLanguage) {
     
     var upperCaseName = textVal.toUpperCase();
@@ -13,8 +12,6 @@ function greetFactory(listOfNames) {
         namesGreeted[upperCaseName] = 0;
       }
     }
-
-
     var upperCaseName = textVal.charAt(0).toUpperCase() + textVal.slice(1);
     if (upperCaseName === "" && theLanguage === "") {
       theGreeting = "Please Enter Name and Select Language";
@@ -46,7 +43,6 @@ function greetFactory(listOfNames) {
   function loadingName(){
    namesGreeted = {};
   }
-
 
   return {
     output,

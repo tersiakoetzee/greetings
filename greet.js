@@ -14,7 +14,6 @@ function greetMe() {
 
     var checkedRadiobtn = document.querySelector("input[name='radiobut']:checked");
 
-    
     if (checkedRadiobtn) {
         theLanguage = checkedRadiobtn.value;
     }
@@ -23,8 +22,7 @@ function greetMe() {
     greetingString.innerHTML = greet.output();
     greetcount.innerHTML = greet.setCounter();
 
-    localStorage.setItem("Name", JSON.stringify(greet.storedNames()));
-    
+    localStorage.setItem("Name", JSON.stringify(greet.storedNames())); 
 }
 
 
@@ -34,7 +32,6 @@ function resetBtn() {
     greet.loadingName();
     greetcount.innerHTML = "";
     greetingString.innerHTML = "";
-
 }
 
 clickResetElem.addEventListener("click", resetBtn)
