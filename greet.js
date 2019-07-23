@@ -20,9 +20,7 @@ function greetMe() {
     }
 
     greet.getName(textVal.value, theLanguage);
-
     greetingString.innerHTML = greet.output();
-    
     greetcount.innerHTML = greet.setCounter();
 
     localStorage.setItem("Name", JSON.stringify(greet.storedNames()));
