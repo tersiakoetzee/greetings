@@ -62,10 +62,20 @@ describe("The setCounter function", function () {
 it ("only allow a name to be enterded once", function(){
     let greeting = greetFactory();
 
-    greeting.name("Mia")
-    greeting.name("Mia")
-    greeting.name("Mia")
+    greeting.storedNames("Mia")
+    greeting.storedNames("Mia")
+    greeting.storedNames("Mia")
     assert.equal(greeting.loadingName(1))
+
+})
+
+it ("only allow a name to be enterded once", function(){
+    let greeting = greetFactory();
+
+    greeting.storedNames("Mia")
+    greeting.storedNames("lia")
+    greeting.storedNames("tyla")
+    assert.equal(greeting.loadingName(3))
 
 })
 });

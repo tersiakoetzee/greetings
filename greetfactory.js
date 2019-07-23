@@ -4,7 +4,6 @@ function greetFactory(listOfNames) {
   var theGreeting = "";
 
   function getName(textVal, theLanguage) {
-    
     var upperCaseName = textVal.toUpperCase();
 
     if (textVal) {
