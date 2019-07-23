@@ -12,14 +12,13 @@ var greet = greetFactory(greeted);
 
 function greetMe() {
 
- 
-    
     var checkedRadiobtn = document.querySelector("input[name='radiobut']:checked");
 
+    
     if (checkedRadiobtn) {
         theLanguage = checkedRadiobtn.value;
     }
-    greet.name(textVal.value)
+
     greet.getName(textVal.value, theLanguage);
     greetingString.innerHTML = greet.output();
     greetcount.innerHTML = greet.setCounter();
@@ -27,6 +26,7 @@ function greetMe() {
     localStorage.setItem("Name", JSON.stringify(greet.storedNames()));
     
 }
+
 
 
 function resetBtn() {

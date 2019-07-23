@@ -4,16 +4,14 @@ function greetFactory(listOfNames) {
   var theGreeting = "";
 
 
-
-  function name(textVal) {
-    if (textVal) {
-      if (namesGreeted[textVal] === undefined) {
-        namesGreeted[textVal] = 0;
-      }
-    }
-  }
-
   function getName(textVal, theLanguage) {
+    
+    var upperCaseName = textVal.toUpperCase();
+
+    if (namesGreeted[upperCaseName] === undefined) {
+      namesGreeted[upperCaseName] = 0;
+    }
+
 
     var upperCaseName = textVal.charAt(0).toUpperCase() + textVal.slice(1);
     if (upperCaseName === "" && theLanguage === "") {
