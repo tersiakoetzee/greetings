@@ -7,19 +7,20 @@ function greetFactory(listOfNames) {
   function getName(textVal, theLanguage) {
 
     var upperCaseName = textVal.toUpperCase();
-    if (textVal) {
-      if (namesGreeted[upperCaseName] === undefined) {
-        namesGreeted[upperCaseName] = 0;
-      }
+    if (upperCaseName === "" && theLanguage === "") {
+      theGreeting = "Please Enter Name and Select Language";
+    } else if (upperCaseName === "") {
+      theGreeting = "No Name Entered";
+    } else if (theLanguage === "") {
+      theGreeting = "No Language Selected";
+      if (textVal) {
+        if (namesGreeted[upperCaseName] === undefined) {
+          namesGreeted[upperCaseName] = 0;
+        }
 
 
-      var upperCaseName = textVal.charAt(0).toUpperCase() + textVal.slice(1);
-      if (upperCaseName === "" && theLanguage === "") {
-        theGreeting = "Please Enter Name and Select Language";
-      } else if (upperCaseName === "") {
-        theGreeting = "No Name Entered";
-      } else if (theLanguage === "") {
-        theGreeting = "No Language Selected";
+        var upperCaseName = textVal.charAt(0).toUpperCase() + textVal.slice(1);
+
       } else if (theLanguage === "English") {
         theGreeting = "Hello, " + upperCaseName;
       } else if (theLanguage === "isiXhosa") {
